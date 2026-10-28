@@ -1,0 +1,170 @@
+/* ==========================================================
+   Paleta
+   ----------------------------------------------------------
+   Acento (naranja)   #EA580C   normal
+                      #C2410C   hover
+                      #9A3412   pressed
+                      #FDBA74   deshabilitado
+   Fondo de ventana   #FFF7ED
+   Tarjeta            #FFFFFF
+   Texto              #1C1917   principal
+                      #57534E   secundario
+   Bordes             #E7E5E4   reposo   ·   #EA580C  foco
+   Error              #B91C1C
+   Éxito              #15803D
+   ========================================================== */
+
+/* ---------- fondo y texto base ---------- */
+QStackedWidget {
+    background-color: #FFF7ED;
+}
+
+QLabel {
+    background: transparent;
+    color: #1C1917;
+    font-size: 13px;
+}
+
+/* ---------- tarjeta ---------- */
+QFrame#frame_tarjeta {
+    background-color: #FFFFFF;
+    border: 1px solid #E7E5E4;
+    border-radius: 16px;
+}
+
+/* ---------- textos ---------- */
+QLabel#label_titulo {
+    color: #1C1917;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+QLabel#label_subtitulo {
+    color: #57534E;
+    padding-bottom: 8px;
+}
+
+QLabel#label_usuario,
+QLabel#label_password,
+QLabel#label_confirmar_password,
+QLabel#label_nombre,
+QLabel#label_apellido {
+    color: #1C1917;
+    font-weight: 600;
+    padding-top: 6px;
+}
+
+/* ---------- campos ---------- */
+QLineEdit {
+    background-color: #FFFFFF;
+    color: #1C1917;
+    border: 1px solid #E7E5E4;
+    border-radius: 8px;
+    padding: 9px 10px;
+}
+
+QLineEdit:hover {
+    border: 1px solid #FDBA74;
+}
+
+QLineEdit:focus {
+    border: 2px solid #EA580C;
+}
+
+/* ---------- casilla "mostrar contraseña" ---------- */
+QCheckBox {
+    background: transparent;
+    color: #57534E;
+    padding: 4px 0;
+}
+
+QCheckBox:hover {
+    color: #C2410C;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border: 1px solid #A8A29E;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+
+QCheckBox::indicator:hover {
+    border: 1px solid #EA580C;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #EA580C;
+    border: 1px solid #EA580C;
+}
+
+QCheckBox::indicator:checked:hover {
+    background-color: #C2410C;
+    border: 1px solid #C2410C;
+}
+
+/* ---------- botón principal (login y registro) ---------- */
+QPushButton#btn_login,
+QPushButton#btn_registrar {
+    background-color: #EA580C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+}
+
+QPushButton#btn_login:hover,
+QPushButton#btn_registrar:hover {
+    background-color: #C2410C;
+}
+
+QPushButton#btn_login:pressed,
+QPushButton#btn_registrar:pressed {
+    background-color: #9A3412;
+}
+
+QPushButton#btn_login:disabled,
+QPushButton#btn_registrar:disabled {
+    background-color: #FDBA74;
+    color: #FFFFFF;
+}
+
+/* ---------- botones secundarios (enlaces) ---------- */
+QPushButton#btn_ir_registro,
+QPushButton#btn_volver_login {
+    background-color: transparent;
+    color: #EA580C;
+    border: none;
+    padding: 8px;
+    font-weight: 600;
+}
+
+QPushButton#btn_ir_registro:hover,
+QPushButton#btn_volver_login:hover {
+    color: #C2410C;
+    text-decoration: underline;
+}
+
+QPushButton#btn_ir_registro:pressed,
+QPushButton#btn_volver_login:pressed {
+    color: #9A3412;
+}
+
+/* ---------- mensajes (Python dice el tipo, el QSS decide el color) ---------- */
+QLabel#label_mensaje {
+    color: #57534E;
+    padding: 2px 0;
+}
+
+QLabel#label_mensaje[tipo="error"] {
+    color: #B91C1C;
+    font-weight: 600;
+}
+
+QLabel#label_mensaje[tipo="exito"] {
+    color: #15803D;
+    font-weight: 600;
+}
